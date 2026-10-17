@@ -1,0 +1,83 @@
+/* ===== COLORI DEL SITO: cambiate questi valori per personalizzarlo ===== */
+:root{
+  --accento:#E25A4C;      /* colore principale: bottoni, filetti, numeri */
+  --accento-scuro:#B23A2E; /* versione scura dell'accento, per i testi su sfondo chiaro */
+  --accento-chiaro:#F08A7E;/* versione chiara dell'accento, per i testi su sfondo scuro */
+  --su-accento:#0C1542;    /* colore del testo dentro i bottoni */
+  --notte:#0C1542;         /* sfondo di barra, intestazione e piè di pagina */
+  --notte2:#18245E;
+  --inchiostro:#141E5C;    /* colore del testo */
+  --grigio:#5A6A81;
+  --linea:#D6DDE8;
+  --chiaro:#F4F6FA;        /* sfondo delle sezioni grigie */
+  --bianco:#FFFFFF;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bianco);color:var(--inchiostro);font-family:'Segoe UI',Roboto,Arial,sans-serif;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+nav{position:sticky;top:0;z-index:5;background:var(--notte);border-bottom:1px solid var(--notte2)}
+nav .wrap{display:flex;align-items:center;gap:14px;height:64px}
+nav img{height:40px}
+nav .nome{color:var(--bianco);font-weight:700;font-size:17px;margin-right:auto}
+nav a{color:#C9D2E6;text-decoration:none;font-size:15px;padding:6px 4px;border-bottom:2px solid transparent}
+nav a:hover{color:var(--bianco);border-bottom-color:var(--accento)}
+
+header{background:radial-gradient(circle at 78% 40%,#1D2A6B 0,var(--notte) 55%);color:var(--bianco)}
+header .wrap{display:grid;grid-template-columns:1.3fr 1fr;align-items:center;gap:32px;padding-top:56px;padding-bottom:56px}
+.kicker{color:var(--accento-chiaro);font-weight:700;letter-spacing:.08em;font-size:13px;text-transform:uppercase;margin:0 0 10px}
+h1{font-size:54px;line-height:1.05;margin:0 0 14px}
+.motto{font-size:21px;color:#C9D2E6;margin:0 0 26px;font-style:italic}
+.bottone{display:inline-block;background:var(--accento);color:var(--su-accento);font-weight:700;text-decoration:none;padding:12px 22px;border-radius:6px}
+header img.logo{width:100%;max-width:340px;justify-self:center;filter:drop-shadow(0 12px 30px rgba(0,0,0,.35))}
+
+section{padding:56px 0}
+section.grigia{background:var(--chiaro)}
+h2{font-size:30px;margin:0 0 6px}
+.sotto{color:var(--grigio);margin:0 0 28px;font-size:16px}
+.filetto{width:56px;height:4px;background:var(--accento);border-radius:2px;margin:0 0 14px}
+
+.chi{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:start}
+.chi p{font-size:17px;margin:0 0 14px}
+.numeri{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.numero{background:var(--chiaro);border-radius:10px;padding:18px}
+.numero b{display:block;font-size:34px;color:var(--accento-scuro);line-height:1.1}
+.numero span{color:var(--grigio);font-size:14px}
+
+.griglia{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px}
+.card{background:var(--bianco);border-radius:10px;border-top:4px solid var(--accento);padding:22px 18px;text-align:center}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--notte);color:var(--accento-chiaro);font-weight:800;font-size:24px;display:grid;place-items:center;margin:0 auto 12px}
+.card h3{margin:0 0 2px;font-size:18px}
+.ruolo{color:var(--accento-scuro);font-weight:700;font-size:14px;margin:0 0 8px}
+.card p{margin:0;color:var(--grigio);font-size:14px}
+
+.progetti{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.progetto{background:var(--chiaro);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.progetto .fascia{background:var(--notte);color:var(--bianco);padding:18px 20px}
+.progetto .fascia small{color:var(--accento-chiaro);font-weight:700;letter-spacing:.06em}
+.progetto .fascia h3{margin:4px 0 0;font-size:20px}
+.progetto .corpo{padding:18px 20px;color:var(--grigio);font-size:15px;flex:1}
+.stato{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;margin-top:10px}
+.stato.fatto{background:#DDF3EC;color:#137457}
+.stato.corso{background:#FDF0D8;color:#8A5A07}
+
+.diario{border-left:3px solid var(--linea);padding-left:22px;display:grid;gap:18px}
+.voce{position:relative}
+.voce::before{content:"";position:absolute;left:-30px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--accento)}
+.voce time{font-weight:700;color:var(--accento-scuro);font-size:14px}
+.voce p{margin:2px 0 0}
+
+footer{background:var(--notte);color:#C9D2E6;font-size:14px}
+footer .wrap{display:flex;align-items:center;gap:18px;padding-top:26px;padding-bottom:26px;flex-wrap:wrap}
+footer img{height:46px;border-radius:4px}
+footer div{margin-right:auto}
+footer a{color:var(--bianco)}
+
+/* ===== TELEFONO ===== */
+@media (max-width:760px){
+  header .wrap,.chi,.progetti{grid-template-columns:1fr}
+  h1{font-size:40px}
+  nav a{display:none}
+  header img.logo{max-width:220px;order:-1}
+}
